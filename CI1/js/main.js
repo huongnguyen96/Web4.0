@@ -1,6 +1,6 @@
 var Nakama = {};
 Nakama.configs = {
-  SHIP_SPEED : 200
+  SHIP_SPEED : 100//gán dl chung, khi thay đổi sẽ ko phải làm nhiều lần
 }
 window.onload = function(){
   Nakama.game = new Phaser.Game(
