@@ -45,7 +45,7 @@ class ShipController{
         this.sprite.position.x,
         this.sprite.position.y,
         'assets',
-        "BulletType1.png");
+        "BulletType2.png");
         newBullet.anchor = new Phaser.Point(0.5,0.5);//tao moi
         Nakama.game.physics.enable(newBullet, Phaser.Physics.ARCADE);
         newBullet.body.velocity.y = -Nakama.configs.BULLET_SPEED;
@@ -54,7 +54,7 @@ class ShipController{
         this.sprite.position.x,
         this.sprite.position.y,
         'assets',
-        "BulletType1.png");
+        "BulletType2.png");
         newBullet1.anchor = new Phaser.Point(0.5,0.5);//tao moi
         Nakama.game.physics.enable(newBullet1, Phaser.Physics.ARCADE);
         newBullet1.body.velocity.y = -Nakama.configs.BULLET_SPEED;
@@ -63,17 +63,17 @@ class ShipController{
         this.sprite.position.x,
         this.sprite.position.y,
         'assets',
-        "BulletType1.png");
+        "BulletType2.png");
         newBullet2.anchor = new Phaser.Point(0.5,0.5);//tao moi
         Nakama.game.physics.enable(newBullet2, Phaser.Physics.ARCADE);
 
-        var newBullet3 = Nakama.bulletGroup.create(
-          this.sprite.position.x,
-          this.sprite.position.y,
-          'assets',
-          "BulletType1.png");
-          newBullet3.anchor = new Phaser.Point(0.5,0.5);//tao moi
-          Nakama.game.physics.enable(newBullet3, Phaser.Physics.ARCADE);
+      var newBullet3 = Nakama.bulletGroup.create(
+        this.sprite.position.x,
+        this.sprite.position.y,
+        'assets',
+        "BulletType2.png");
+        newBullet3.anchor = new Phaser.Point(0.5,0.5);//tao moi
+        Nakama.game.physics.enable(newBullet3, Phaser.Physics.ARCADE);
 
       newBullet.body.velocity.y = -Nakama.configs.BULLET_SPEED;
       newBullet1.body.velocity = new Phaser.Point(0,-10).setMagnitude(Nakama.configs.BULLET_SPEED);
