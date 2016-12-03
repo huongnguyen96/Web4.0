@@ -34,51 +34,29 @@ class ShipController{
     }
     if(Nakama.keyboard.isDown(this.configs.fire)&& this.timeSinceLastFire >= this.configs.cooldown){
       this.fire();
-
       this.timeSinceLastFire = 0;// sau moi lan ban thi dua thoi gian tro ve 0
     }
 
   }
 
   fire(){
-      var newBullet = Nakama.bulletGroup.create(
+
+    var newBullet = new BulletController(
         this.sprite.position.x,
         this.sprite.position.y,
-        'assets',
         "BulletType2.png");
-        newBullet.anchor = new Phaser.Point(0.5,0.5);//tao moi
-        Nakama.game.physics.enable(newBullet, Phaser.Physics.ARCADE);
-        newBullet.body.velocity.y = -Nakama.configs.BULLET_SPEED;
+    this.sprite.body.velocity.y = new Phaser.Point(0,-10).setMagnitude(Nakama.configs.BULLET_SPEED);
 
-      var newBullet1 = Nakama.bulletGroup.create(
+      var newBullet1 = new BulletController(
         this.sprite.position.x,
         this.sprite.position.y,
-        'assets',
         "BulletType2.png");
-        newBullet1.anchor = new Phaser.Point(0.5,0.5);//tao moi
-        Nakama.game.physics.enable(newBullet1, Phaser.Physics.ARCADE);
-        newBullet1.body.velocity.y = -Nakama.configs.BULLET_SPEED;
+    this.sprite.body.velocity = new Phaser.Point(-1,-10).setMagnitude(Nakama.configs.BULLET_SPEED);
 
-      var newBullet2 = Nakama.bulletGroup.create(
+      var newBullet2 = new BulletController(
         this.sprite.position.x,
         this.sprite.position.y,
-        'assets',
         "BulletType2.png");
-        newBullet2.anchor = new Phaser.Point(0.5,0.5);//tao moi
-        Nakama.game.physics.enable(newBullet2, Phaser.Physics.ARCADE);
-
-      var newBullet3 = Nakama.bulletGroup.create(
-        this.sprite.position.x,
-        this.sprite.position.y,
-        'assets',
-        "BulletType2.png");
-        newBullet3.anchor = new Phaser.Point(0.5,0.5);//tao moi
-        Nakama.game.physics.enable(newBullet3, Phaser.Physics.ARCADE);
-
-      newBullet.body.velocity.y = -Nakama.configs.BULLET_SPEED;
-      newBullet1.body.velocity = new Phaser.Point(0,-10).setMagnitude(Nakama.configs.BULLET_SPEED);
-      newBullet2.body.velocity = new Phaser.Point(1,-10).setMagnitude(Nakama.configs.BULLET_SPEED);
-      newBullet3.body.velocity = new Phaser.Point(-1,-10).setMagnitude(Nakama.configs.BULLET_SPEED);
-
+    this.sprite.body.velocity = new Phaser.Point(1,-10).setMagnitude(Nakama.configs.BULLET_SPEED);
   }
 }

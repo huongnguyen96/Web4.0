@@ -1,7 +1,8 @@
 var Nakama = {};
 Nakama.configs = {
   SHIP_SPEED : 200,//gán dl chung, khi thay đổi sẽ ko phải làm nhiều lần
-  BULLET_SPEED: 1000//toc do dan nhanh hon
+  BULLET_SPEED: 1000,//toc do dan nhanh hon
+  DAMAGE: 1// DO HU HAI
 }
 window.onload = function(){
   Nakama.game = new Phaser.Game(
@@ -32,18 +33,22 @@ var preload = function(){
   Nakama.game.load.image('background', 'Assets/Map1.png');
   Nakama.game.time.advancedTiming = true;
 };
-
+var backgrounds;
 var create = function(){
 
   Nakama.game.physics.startSystem(Phaser.Physics.ARCADE);
   Nakama.keyboard  = Nakama.game.input.keyboard;
+  //set background
+  background = Nakama.game.add.tileSprite(0, 0, 1000, 1000, 'background');
+  backgrounds = 5;
+
   // de tau duoc ve tren dan, tuc la luc ban dan se di ra tu mui tau, chu ko de len tren tau
   Nakama.enemyGroup = Nakama.game.add.physicsGroup();
   Nakama.bulletGroup = Nakama.game.add.physicsGroup();
   Nakama.playerGroup = Nakama.game.add.physicsGroup();
 
   Nakama.shipControllers = [];
-  var player1 = new ShipController(400,800,"Spaceship1-Player.png",{
+  var player1 = new ShipController(400,800,"Spaceship3-Partner.png",{
     up:       Phaser.Keyboard.UP,
     down:     Phaser.Keyboard.DOWN,
     left:     Phaser.Keyboard.LEFT,
@@ -62,24 +67,25 @@ var create = function(){
     cooldown: 0.1
   });
   Nakama.shipControllers.push(player2);
-  var enemy = Nakama.enemyGroup.create(
-    320,
-    100,
-    'assets',
-    "EnemyType1.png"
-  );
-  enemy.health = 200;
+
+  //enemy
+  var enemy = new EnemyController(320,100,"EnemyType1.png");
+  var enemy2 = new EnemyController(320,100,"EnemyType2.png");
+  var enemy3 = new EnemyController(320,100,"EnemyType3.png");
 };
 
+
 var update = function() {
+  background.tilePosition.y += backgrounds;
   for(var i = 0 ; i < Nakama.shipControllers.length;i++){
     Nakama.shipControllers[i].update();
   }
+
   Nakama.game.physics.arcade.overlap(Nakama.bulletGroup,Nakama.enemyGroup,onBulletHitActor);//kiem tra xem 1 cai nao trong bulletGroup va enemyGroup va cham vao nhau thi bat su khien
 
 }
 function onBulletHitActor(bulletSprite,actorSprite){
-  actorSprite.damage(1);//
+  actorSprite.damage(Nakama.configs.DAMAGE);//
   bulletSprite.kill();// neu bat trung su kien thi ban chet
 }
 var render = function(){}
