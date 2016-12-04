@@ -7,8 +7,10 @@ class ShipController{
       'assets',
       spriteName
     );
+    this.sprite.health = configs.health;
     this.sprite.anchor = new Phaser.Point(0.5,0.5);// anchor: mo neo: khien cho bullet nam dung tam(trn mot duong)
-    Nakama.game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
+    this.sprite.body.collideWorldBounds = true;
+    this.sprite.body.setCircle(this.configs.hitBoxRadius, this.configs.hixBoxOffset.x, this.configs.hixBoxOffset.y);
     this.timeSinceLastFire = 0;// khoi tao thoi gian ban
   }
 
@@ -39,24 +41,8 @@ class ShipController{
 
   }
 
-  fire(){
+    fire(){
 
-    var newBullet = new BulletController(
-        this.sprite.position.x,
-        this.sprite.position.y,
-        "BulletType2.png");
-    this.sprite.body.velocity.y = new Phaser.Point(0,-10).setMagnitude(Nakama.configs.BULLET_SPEED);
+    }
 
-      var newBullet1 = new BulletController(
-        this.sprite.position.x,
-        this.sprite.position.y,
-        "BulletType2.png");
-    this.sprite.body.velocity = new Phaser.Point(-1,-10).setMagnitude(Nakama.configs.BULLET_SPEED);
-
-      var newBullet2 = new BulletController(
-        this.sprite.position.x,
-        this.sprite.position.y,
-        "BulletType2.png");
-    this.sprite.body.velocity = new Phaser.Point(1,-10).setMagnitude(Nakama.configs.BULLET_SPEED);
-  }
 }

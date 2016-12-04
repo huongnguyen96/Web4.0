@@ -1,13 +1,13 @@
 class EnemyController{
-  constructor(x,y,spriteName,configs){
+  constructor(position,spriteName,configs){
     this.configs = configs;
     this.enemy = Nakama.enemyGroup.create(
-      x,
-      y,
+      position.x,
+      position.y,
       'assets',
       spriteName
     );
-    this.enemy.health = 200;
+    this.enemy.health = configs.health;
     this.enemy.anchor = new Phaser.Point(0.5,0.5);
     this.timeSinceLastFireE = 0;
   }
