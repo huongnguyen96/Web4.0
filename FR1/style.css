@@ -1,0 +1,40 @@
+h1{
+  color: red;
+}
+li{
+  color: deepskyblue;
+}
+#title{
+  background-color: brown;
+}
+.small_title{
+  text-decoration: underline;
+}
+
+.second_title{
+  font-style: italic;
+}
+[href]{
+  font-size: 50px;
+}
+
+[href = "#title"]{
+  font-size: 50px;
+}
+.second_title .small_title{
+  text-decoration: line-through;
+}
+.second_title{
+  color: blue;
+}
+.second_title>.small_title{
+  color: #ffffff;
+}
+
+.small_title:hover{
+  background: black;
+}
+
+.small_title:active{
+  display: inline;
+}
