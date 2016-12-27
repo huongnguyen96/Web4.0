@@ -1,0 +1,9 @@
+img{
+  /*float: left;*/
+  /*position: relative;
+  left: 400px;*/
+  position: fixed; /*căn vị trí theo vị trí của cửa sổ trình duyệt, ko thay đổi vị trí khi trang web bị cuộn*/
+}
+/*p{
+  float: left;
+}
