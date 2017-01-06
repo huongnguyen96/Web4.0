@@ -4,9 +4,18 @@
     <title>Techkids Hotgirls</title>
     <meta charset="utf-8">
     <meta name = "viewport" content="width=device-width,initial-scale-1">
+
+
     <link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css"></link>
+
+    <script type="text/javascript" src="libs/bootstrap/js/jquery-3.1.1.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap/js/handlebars-v4.0.5.js"></script>
+    <script type="text/javascript" src="libs/bootstrap/js/masonry.pkgd.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/style.css"></link>
-    <script src="libs/bootstrap/css/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
   </head>
   <body>
     <header class="header">
@@ -31,123 +40,53 @@
         </div>
       </nav>
     </header>
-    <div id="huong">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="top">
-              <img alt="Hot girl Techkids" src="img/1.png">
-              <div class="overlay">
-                <div class="button">
-  								<button><span class="glyphicon glyphicon-plus"></span></button>
-  							</div>
 
-  							<div class="icon-eye">
-  								<span class="glyphicon glyphicon-eye-open"></span>
-  								<span class="number">857</span>
-                </div>
-                <div class="icon-time">
-                  <span class="glyphicon glyphicon-time"></span>
-  								<span class="date">31/12/16</span>
-                </div>
-                <div class="icon-plus">
-                  <span class="glyphicon glyphicon-plus"></span>
-  								<span class="number">123</span>
-                </div>
+    <section class="container">
+      <div id="item_list" class="row">
 
-              </div>
-              <div class="info">
-                <p>Dzzung</p>
-                <p>HRC photos</p>
-                <div class="caption">
-                  <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                </div>
-              </div>
-
-            </div>
-            <div class="bottom">
-              <img alt="Hot girl Techkids" src="img/toan.jpg">
-              <div class="info">
-                <p>Toan</p>
-                <p>HRC photos</p>
-                <div class="caption">
-                  <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="top">
-              <img alt="Hot girl Techkids" src="img/2.png">
-              <div class="info">
-                <p>What's your name?</p>
-                <p>HRC photos</p>
-                <div class="caption">
-                  <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                </div>
-              </div>
-
-            </div>
-            <div class="bottom">
-              <img alt="Hot girl Techkids" src="img/linh.jpg">
-              <div class="info">
-                <p>Linh</p>
-                <p>HRC photos</p>
-                <div class="caption">
-                  <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="top">
-              <img alt="Hot girl Techkids" src="img/3.png">
-              <div class="info">
-                <p>What's your name?</p>
-                <p>HRC photos</p>
-                <div class="caption">
-                  <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                </div>
-              </div>
-
-            </div>
-            <div class="bottom">
-              <img alt="Hot girl Techkids" src="img/cong.jpg">
-              <div class="info">
-                <p>Cong</p>
-                <p>HRC photos</p>
-                <div class="caption">
-                  <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="top">
-              <img alt="Hot girl Techkids" src="img/4.png">
-              <div class="info">
-                <p>This is Ngan</p>
-                <p>HRC photos</p>
-                <div class="caption">
-                  <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                </div>
-              </div>
-
-            </div>
-          <div>
-            <img alt="Hot girl Techkids" src="img/hoa.jpg">
-            <div class="info">
-              <p>Hoa</p>
-              <p>HRC photos</p>
-              <div class="caption">
-                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-              </div>
-            </div>
-          </div>
       </div>
-    </div>
+    </section>
+
+    <script id="item-template" type="text/x-handlebars-template">
+      {{#each items}}
+        <div class="col-md-3 col-sm-6 item_container">
+          <div class="item">
+            <div class="image_container">
+              <img src={{imageUrl}} alt="techkids hotgirl">
+              <div class="overlay">
+                <button type="button" class="plus_button">
+                  <span class="glyphicon glyphicon-plus">
+                  </span>
+                </button>
+                <div class="img_statistics_container">
+                  <div class="row text-center">
+                    <div class="col-xs-4">
+                      <span class="glyphicon glyphicon-eye-open"></span>
+                      <p>{{view}}</p>
+                    </div>
+                    <div class="col-xs-4">
+                      <span class="glyphicon glyphicon-time"></span>
+                      <p>{{date}}</p>
+                    </div>
+                    <div class="col-xs-4">
+                      <span class="glyphicon glyphicon-plus"></span>
+                      <p>{{plus}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="info_container">
+              <div class="author_info">
+                <img src={{posterAvatar}} class="author_avatar">
+                <h3>{{posterName}}</h3>
+                <p class="text-muted">{{posterTitle}}</p>
+              </div>
+              <p>{{content}}</p>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </script>
   </body>
 </html>
