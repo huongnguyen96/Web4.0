@@ -8,7 +8,6 @@
   })
 });*/
 
-
 $(document).ready(function(){
   var itemTemplate = Handlebars.compile($("#item-template").html());
   $.ajax({

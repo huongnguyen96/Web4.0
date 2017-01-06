@@ -99,13 +99,10 @@ body{
   height: 50px;
   border-radius: 100%;
 }
-.plus_button{
+.btn-primary{
   position: absolute;
   top: 15px;
   left: 15px;
-  height: 30px;
-  width: 30px;
-  line-height: 30px;
   background: #ffffff;
   color: #000000;
   border: 0 none;
@@ -114,8 +111,36 @@ body{
 
 .img_statistics_container{
   position: absolute;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
   color: #ffffff;
+}
+
+.right{
+  float: right;
+  margin: 10px 0 0 0;
+  display: inline-block;
+}
+
+.modal-img{
+  width: 100%;
+}
+
+.modal-button{
+  color: #ffffff;
+  background: #cecece;
+  margin: 10px 0 0 0;
+  width: 34px;
+  height: 34px;
+  border: 0 none;
+
+}
+
+.modal-info .author_info>h4{
+  float: left;
+}
+
+.modal-info>p{
+  float: left;
 }
