@@ -45,74 +45,15 @@
       <div id="item_list" class="row">
       </div>
     </section>
-
+    <!--ITEMS-->
     <script id="item-template" type="text/x-handlebars-template">
       {{#each items}}
         <div class="col-md-3 col-sm-6 item_container">
-
-
-          <!--MODAL-->
-          <div id="modal1" class="modal fade">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;
-                  </button>
-                  <button class="modal-button">
-                    <span class="glyphicon glyphicon-plus">
-                    </span>
-                </button>
-
-                  <div class="row right text-center modal-item">
-                    <div class="col-xs-4 text-center modal-item">
-                      <span class="glyphicon glyphicon-eye-open"></span>
-                      <p>{{view}}</p>
-                    </div>
-                    <div class="col-xs-4 modal-item">
-                      <span class="glyphicon glyphicon-time"></span>
-                      <p>{{date}}</p>
-                    </div>
-                    <div class="col-xs-4 modal-item">
-                      <span class="glyphicon glyphicon-plus"></span>
-                      <p>{{plus}}</p>
-                    </div>
-                  </div>
-                  <img class="modal-img" src={{imageUrl}} alt="techkids hotgirl">
-                  <div class="info_container">
-                    <div class="author_info">
-                      <img src="{{posterAvatar}}" class="author_avatar"/>
-                      <h3>{{posterName}}</h3>
-                      <p class="text-muted">{{posterTitle}}</p>
-                    </div>
-                    <p>
-                      {{content}}
-                    </p>
-                  </div>
-
-                </div>
-
-                <div class="modal-footer">
-                  <div class="info_container modal-info">
-                    <div class="author_info" >
-                      <img src="{{posterAvatar}}" class="author_avatar"/>
-                      <h4>Kiss me :*</h4>
-                    </div>
-                    <p>
-                      {{content}}
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <!--ITEM-->
           <div class="item">
             <div class="image_container">
               <img src={{imageUrl}} alt="techkids hotgirl">
               <div class="overlay">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{id-modal}}">
                   <span class="glyphicon glyphicon-plus">
                   </span>
                 </button>
@@ -145,6 +86,65 @@
                 <p class="text-muted">{{posterTitle}}</p>
               </div>
               <p>{{content}}</p>
+            </div>
+          </div>
+
+        </div>
+        <!--MODAL-->
+        <div id="{{id-modal}}" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;
+                </button>
+                <button class="modal-button">
+                  <span class="glyphicon glyphicon-plus">
+                  </span>
+                </button>
+
+                <div class="modal-item">
+
+                  <div class="row right text-center">
+                    <div class="col-xs-4 text-center">
+                      <span class="glyphicon glyphicon-eye-open"></span>
+                      <p>{{view}}</p>
+                    </div>
+                    <div class="col-xs-4">
+                      <span class="glyphicon glyphicon-time"></span>
+                      <p>{{date}}</p>
+                    </div>
+                    <div class="col-xs-4">
+                      <span class="glyphicon glyphicon-plus"></span>
+                      <p>{{plus}}</p>
+                    </div>
+                  </div>
+                </div>
+                <img class="modal-img" src={{imageUrl}} alt="techkids hotgirl">
+                <div class="info_container">
+                  <div class="author_info author_info_avatar">
+                    <img src="{{posterAvatar}}" class="author_avatar"/>
+                    <h3>{{posterName}}</h3>
+                    <p class="text-muted">{{posterTitle}}</p>
+                  </div>
+                  <p>
+                    {{content}}
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="modal-footer">
+                <div class="info_container modal-info">
+                  <div class="author_info" >
+                    <img src="{{posterAvatar}}" class="author_avatar"/>
+                    <h4>Kiss me :*</h4>
+                  </div>
+                  <p>
+                    {{content}}
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>

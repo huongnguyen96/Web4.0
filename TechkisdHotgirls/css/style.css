@@ -137,10 +137,14 @@ body{
 
 }
 
-.modal-info .author_info>h4{
-  float: left;
+.modal-dialog{
+  width: 40%;
+  min-width: 368px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
-.modal-info>p{
-  float: left;
+.author_info_avatar img{
+  width: 30%;
+  height: 30%;
 }
