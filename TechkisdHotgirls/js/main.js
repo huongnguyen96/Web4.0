@@ -41,7 +41,7 @@ $(document).ready(function(){
     if($(window).scrollTop()+window.innerHeight > $(document).height() - 200){
       setTimeout(function() {
         requestNextPage(itemTemplate);
-      },2000);
+      },1000000);
       isrequestNextPage = true;
     }
   });
