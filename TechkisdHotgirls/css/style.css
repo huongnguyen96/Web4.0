@@ -117,34 +117,49 @@ body{
   color: #ffffff;
 }
 
-.right{
-  float: right;
-  margin: 10px 0 0 0;
+.item_modal_statistic>div{
+  width: 70px;
+  padding: 0 5px;
   display: inline-block;
 }
 
-.modal-img{
-  width: 100%;
-}
-
-.modal-button{
-  color: #ffffff;
-  background: #cecece;
-  margin: 10px 0 0 0;
-  width: 34px;
-  height: 34px;
-  border: 0 none;
+#loader div.horizontal-line{
+  border: 1px solid #5A5A5A;
 
 }
 
-.modal-dialog{
-  width: 40%;
-  min-width: 368px;
-  margin-top: 10px;
-  border-radius: 10px;
+div .loading-page {
+	width: 20px;
+	height: 20px;
+	padding: 10px;
+	background-color: #787878;
+	border-radius: 100%;
+  display: inline-block;
+  animation-name: loading-page;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
 }
 
-.author_info_avatar img{
-  width: 30%;
-  height: 30%;
+#icon1{
+  animation-delay: 0s;
+}
+
+#icon2{
+  animation-delay: 0.5s;
+}
+
+#icon3{
+  animation-delay: 1s;
+}
+/*cai nay ko hieu sao no lai chay tung cai 1 ma cu chay ca 3 anh a :()*/
+@keyframes loading-page{
+  0%   :{
+    opacity:1
+  }
+
+  100% :{
+    opacity: 0;
+  }
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
 }

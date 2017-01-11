@@ -17,138 +17,135 @@
     <script type="text/javascript" src="js/main.js"></script>
 <!-- FROFILE-->
   </head>
-  <body>
-    <header class="header">
+  <header class="header">
       <nav class="container">
         <div class="row">
           <form class="col-sm-3 search_form">
-            <input type="text" name = "s" placeholder="Enter your search ...." class="form-control">
+            <input type="text" name="s" placeholder="Enter your search..." class="form-control">
             <span class="glyphicon glyphicon-search"></span>
           </form>
           <div class="col-sm-6 text-center site_logo">
-            <img alt="Techkids Hotgirls" src="img/Logo.png">
+            <img src="img/logo.png" alt="TechKids Hot Girls Logo">
             HOT GIRLS
           </div>
-          <div class="col-sm-3 profile-group">
+          <div class="col-sm-3 profile_group">
             <div class="profile_wrapper">
-            <button><span class="glyphicon glyphicon-camera"></span></button>
-            <button><span class="glyphicon glyphicon-menu-hamburger"></span></button>
-            <span class="user">Kiss me :*</span>
+              <button><span class="glyphicon glyphicon-camera"></span></button>
+              <button><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+              <span class="username">Bach Le</span>
             </div>
           </div>
-
         </div>
       </nav>
     </header>
-    <!--LISTITEM-->
+
     <section class="container">
-      <div id="item_list" class="row">
+      <div class="row" id="item_list">
+
       </div>
     </section>
-    <!--ITEMS-->
+
+    <div class="modal fade" id="item_modal" tabindex="-1" role="dialog" aria-labelledby="item_modal_label">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body" id="item_modal_body">
+            <!-- Modal content goes here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script id="item-template" type="text/x-handlebars-template">
       {{#each items}}
-        <div class="col-md-3 col-sm-6 item_container">
-          <div class="item">
-            <div class="image_container">
-              <img src={{imageUrl}} alt="techkids hotgirl">
-              <div class="overlay">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{id-modal}}">
-                  <span class="glyphicon glyphicon-plus">
-                  </span>
-                </button>
-                <!--<button type="button" class="plus_button">
-                  <span class="glyphicon glyphicon-plus">
-                  </span>
-                </button>-->
-                <div class="img_statistics_container">
-                  <div class="row text-center">
-                    <div class="col-xs-4">
-                      <span class="glyphicon glyphicon-eye-open"></span>
-                      <p>{{view}}</p>
-                    </div>
-                    <div class="col-xs-4">
-                      <span class="glyphicon glyphicon-time"></span>
-                      <p>{{date}}</p>
-                    </div>
-                    <div class="col-xs-4">
-                      <span class="glyphicon glyphicon-plus"></span>
-                      <p>{{plus}}</p>
-                    </div>
+      <div class="col-md-3 col-sm-6 item_container">
+        <div class="item">
+          <div class="image_container">
+            <img src="{{imageUrl}}">
+            <div class="overlay">
+              <button type="button" class="plus_button" data-item-id="{{id}}">
+                <span class="glyphicon glyphicon-plus"></span>
+              </button>
+              <div class="img_statistics_container">
+                <div class="row text-center">
+                  <div class="col-xs-4">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <p>{{view}}</p>
+                  </div>
+                  <div class="col-xs-4">
+                    <span class="glyphicon glyphicon-time"></span>
+                    <p>{{date}}</p>
+                  </div>
+                  <div class="col-xs-4">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <p>{{plus}}</p>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="info_container">
-              <div class="author_info">
-                <img src={{posterAvatar}} class="author_avatar">
-                <h3>{{posterName}}</h3>
-                <p class="text-muted">{{posterTitle}}</p>
-              </div>
-              <p>{{content}}</p>
             </div>
           </div>
-
-        </div>
-        <!--MODAL-->
-        <div id="{{id-modal}}" class="modal fade">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;
-                </button>
-                <button class="modal-button">
-                  <span class="glyphicon glyphicon-plus">
-                  </span>
-                </button>
-
-                <div class="modal-item">
-
-                  <div class="row right text-center">
-                    <div class="col-xs-4 text-center">
-                      <span class="glyphicon glyphicon-eye-open"></span>
-                      <p>{{view}}</p>
-                    </div>
-                    <div class="col-xs-4">
-                      <span class="glyphicon glyphicon-time"></span>
-                      <p>{{date}}</p>
-                    </div>
-                    <div class="col-xs-4">
-                      <span class="glyphicon glyphicon-plus"></span>
-                      <p>{{plus}}</p>
-                    </div>
-                  </div>
-                </div>
-                <img class="modal-img" src={{imageUrl}} alt="techkids hotgirl">
-                <div class="info_container">
-                  <div class="author_info author_info_avatar">
-                    <img src="{{posterAvatar}}" class="author_avatar"/>
-                    <h3>{{posterName}}</h3>
-                    <p class="text-muted">{{posterTitle}}</p>
-                  </div>
-                  <p>
-                    {{content}}
-                  </p>
-                </div>
-
-              </div>
-
-              <div class="modal-footer">
-                <div class="info_container modal-info">
-                  <div class="author_info" >
-                    <img src="{{posterAvatar}}" class="author_avatar"/>
-                    <h4>Kiss me :*</h4>
-                  </div>
-                  <p>
-                    {{content}}
-                  </p>
-                </div>
-              </div>
-
+          <div class="info_container">
+            <div class="author_info">
+              <img src="{{posterAvatar}}" class="author_avatar">
+              <h3>{{posterName}}</h3>
+              <p class="text-muted">{{posterTitle}}</p>
             </div>
+            <p>{{content}}</p>
           </div>
         </div>
+      </div>
       {{/each}}
     </script>
+
+    <script id="item-modal-template" type="text/x-handlebars-template">
+      <div>
+        <button type="button" class="plus_button plus_button_modal pull-left" data-item-id="{{id}}">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
+
+        <div class="pull-right text-center item_modal_statistic">
+          <div>
+            <span class="glyphicon glyphicon-eye-open"></span>
+            <p>{{view}}</p>
+          </div>
+          <div>
+            <span class="glyphicon glyphicon-time"></span>
+            <p>{{date}}</p>
+          </div>
+          <div>
+            <span class="glyphicon glyphicon-plus"></span>
+            <p>{{plus}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="image_container">
+        <img src="{{imageUrl}}">
+      </div>
+      <div>
+        <div class="author_info">
+          <img src="{{posterAvatar}}" class="author_avatar author_avatar_big">
+          <h1>{{posterName}}</h1>
+          <p class="text-muted">{{posterTitle}}</p>
+        </div>
+        <p>{{content}}</p>
+      </div>
+      <hr>
+      <div>
+        <img src="{{posterAvatar}}" class="author_avatar">
+        <p><strong>{{posterName}}</strong></p>
+        <p class="text-muted">{{posterTitle}}</p>
+      </div>
+    </script>
+    <footer class="container">
+      <div class="loading row" id="loader">
+          <div class="horizontal-line col-sm-5"></div>
+          <div class="item-loading text-center col-sm-2">
+            <div class="loading-page" id="#icon1"></div>
+            <div class="loading-page" id="#icon2"></div>
+            <div class="loading-page" id="#icon3"></div>
+          </div>
+          <div class="horizontal-line col-sm-5"></div>
+      </div>
+    </footer>
+
   </body>
 </html>
